@@ -30,7 +30,7 @@ echo "[+] Starting Masscan and Nmap scan..";
 
 sudo masscan -e tun0 -p1-65535,U:1-65535 $IP --rate=500 | grep Discovered | awk '{print $4}' | cut -d/ -f1 > ports;
 
-sudo nmap -Pn -sV -sC -sN -p $(tr '\n' , < ports) -T4 -v $IP -oN -oN $IP.nmap;
+sudo nmap -Pn -sV -sC -sN -p $(tr '\n' , < ports) -T4 -v $IP -oN $IP.nmap;
 
 if [[ $(curl -Is http://$boxName.htb | grep HTTP/1.1 | awk {'print $2'}) == 200 ]]; then
 	echo "[+] Starting simple dirb scan";
