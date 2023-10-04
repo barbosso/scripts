@@ -15,3 +15,6 @@ for video in playlist.videos:
     print(f"Downloaded {count}")
 
 print("Done")
+
+
+# or use ./yt-dlp.exe --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist https://music.youtube.com/playlist?list=XXXXX
